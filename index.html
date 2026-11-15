@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahri Faturrahman (FahriLabs) — Independent Web Developer | fahrilabs.is-a.dev</title>
+    <meta name="description" content="Portofolio resmi pengembangan perangkat lunak open-source Fahri Faturrahman (FahriLabs) di fahrilabs.is-a.dev. Berfokus pada arsitektur web client-side 100%, performa tinggi, dan utilitas developer zero-dependency.">
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"Fira Code"', 'monospace'],
+                    },
+                    colors: {
+                        zinc: {
+                            850: '#1f1f23',
+                            900: '#121215',
+                            950: '#09090b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#09090b] text-zinc-200 font-sans antialiased selection:bg-emerald-500/20 selection:text-emerald-300 relative min-h-screen overflow-x-hidden">
+
+    <!-- Pola Latar Belakang Grid SVG Mikro CPU/Teknis (Opasitas Rendah) -->
+    <div class="fixed inset-0 z-0 pointer-events-none opacity-[0.045]">
+        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="cpu-micro-grid" width="64" height="64" patternUnits="userSpaceOnUse">
+                    <!-- Grid utama -->
+                    <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#a1a1aa" stroke-width="0.75"/>
+                    <!-- Sub-grid titik sudut -->
+                    <rect x="0" y="0" width="2" height="2" fill="#e4e4e7"/>
+                    <rect x="31" y="31" width="2" height="2" fill="#71717a"/>
+                    <!-- Jalur sirkuit mikro halus -->
+                    <path d="M 16 0 L 16 12 L 24 20 L 32 20" fill="none" stroke="#71717a" stroke-width="0.5"/>
+                    <path d="M 48 64 L 48 52 L 40 44 L 32 44" fill="none" stroke="#71717a" stroke-width="0.5"/>
+                    <circle cx="32" cy="20" r="1.5" fill="none" stroke="#a1a1aa" stroke-width="0.5"/>
+                    <circle cx="32" cy="44" r="1.5" fill="none" stroke="#a1a1aa" stroke-width="0.5"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#cpu-micro-grid)"/>
+        </svg>
+    </div>
+
+    <!-- Vignette Radial Halus untuk Kedalaman Visual -->
+    <div class="fixed inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_top,_rgba(24,24,27,0.4)_0%,_rgba(9,9,11,0.92)_75%)]"></div>
+
+    <!-- HEADER / NAVIGASI -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-[#09090b]/85 border-b border-[#27272a]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <!-- Brand & Logo Minimalis -->
+            <div class="flex items-center gap-3">
+                <a href="#" class="flex items-center gap-2.5 group focus:outline-none">
+                    <!-- Ikon Logo Monogram Geometris -->
+                    <div class="w-8 h-8 rounded-lg bg-[#121215] border border-[#27272a] group-hover:border-zinc-500 transition-colors flex items-center justify-center shadow-inner">
+                        <svg class="w-4 h-4 text-zinc-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="4 17 10 11 4 5"></polyline>
+                            <line x1="12" y1="19" x2="20" y2="19"></line>
+                        </svg>
+                    </div>
+                    <span class="font-bold text-base sm:text-lg tracking-tight text-zinc-100">FahriLabs</span>
+                </a>
+                <!-- Badge Status is-a.dev -->
+                <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-[#121215] text-emerald-400 border border-[#27272a]">
+                    [Open-Source Portfolio]
+                </span>
+            </div>
+
+            <!-- Tautan Menu Ringkas -->
+            <nav class="flex items-center gap-1 sm:gap-2">
+                <a href="#projects" class="px-2.5 sm:px-3 py-2 rounded-lg text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-[#121215] transition-colors">
+                    Projects
+                </a>
+                <a href="#skills" class="px-2.5 sm:px-3 py-2 rounded-lg text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-[#121215] transition-colors">
+                    Skills
+                </a>
+                <a href="#about" class="px-2.5 sm:px-3 py-2 rounded-lg text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-[#121215] transition-colors">
+                    About
+                </a>
+                <a href="#connect" class="hidden md:inline-block px-3 py-2 rounded-lg text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-[#121215] transition-colors">
+                    Connect
+                </a>
+                <a href="https://github.com/fahriftrhmn14" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="ml-1 p-2 rounded-lg text-zinc-400 hover:text-zinc-100 bg-[#121215] border border-[#27272a] hover:border-zinc-600 transition-all">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
+
+        <!-- HERO SECTION & PERSONAL PROFILE CARD -->
+        <section class="pt-12 pb-16 sm:pt-16 sm:pb-24 border-b border-[#27272a]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+                
+                <!-- Kolom Kiri: Headline & Value Proposition -->
+                <div class="lg:col-span-7">
+                    <!-- Indikator Identitas & Domain -->
+                    <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-lg bg-[#121215] border border-[#27272a] mb-6">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span class="font-mono text-xs text-zinc-200 font-medium">fahrilabs.is-a.dev</span>
+                        <span class="text-zinc-600 font-mono text-xs">|</span>
+                        <span class="font-mono text-xs text-zinc-400">FahriLabs Engineering</span>
+                    </div>
+
+                    <!-- Judul Utama -->
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-100 leading-[1.15] mb-5">
+                        Fahri Faturrahman
+                        <span class="block text-xl sm:text-2xl font-semibold text-zinc-400 mt-2.5">
+                            Membangun Arsitektur Web <span class="text-zinc-100">Client-Side 100%</span> &amp; Utilitas Developer <span class="text-emerald-400 font-mono text-lg sm:text-xl">zero-dependency</span>.
+                        </span>
+                    </h1>
+
+                    <!-- Deskripsi Teknis -->
+                    <p class="text-base text-zinc-400 leading-relaxed mb-8">
+                        Pengembang perangkat lunak mandiri di balik <strong class="text-zinc-200 font-semibold">FahriLabs</strong>. Berfokus pada rekayasa antarmuka web modern, pemrosesan data langsung di peramban (local-first), latensi rendah, serta pengembangan alat bantu open-source gratis yang berjalan sepenuhnya tanpa ketergantungan backend eksternal.
+                    </p>
+
+                    <!-- Tombol Aksi Utama -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+                        <a href="https://github.com/fahriftrhmn14" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 font-semibold text-sm transition-all shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Eksplorasi Repositori GitHub</span>
+                        </a>
+                        <a href="#projects" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#121215] hover:bg-zinc-800/80 text-zinc-200 border border-[#27272a] hover:border-zinc-600 font-medium text-sm transition-all">
+                            <span>Lihat Daftar Proyek</span>
+                            <svg class="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Kartu Profil Personal (Profile Card) -->
+                <div class="lg:col-span-5">
+                    <div class="bg-[#121215] border border-[#27272a] rounded-2xl p-6 shadow-xl relative overflow-hidden">
+                        <!-- Baris Atas: Status & Identitas File -->
+                        <div class="flex items-center justify-between pb-4 mb-5 border-b border-[#27272a]">
+                            <span class="font-mono text-xs text-zinc-400">profile.config</span>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                <span class="text-emerald-400 text-[10px]">●</span> Open-Source &amp; Free
+                            </span>
+                        </div>
+
+                        <!-- Avatar & Identitas Utama -->
+                        <div class="flex flex-col sm:flex-row lg:flex-col items-center sm:items-start lg:items-center text-center sm:text-left lg:text-center gap-4">
+                            <!-- Lingkaran Profil / Avatar Kucing (Bucket Hat & Kacamata Hitam) -->
+                            <div class="relative group shrink-0">
+                                <div class="w-24 h-24 rounded-full bg-[#38bdf8] border-2 border-[#27272a] group-hover:border-emerald-500/60 transition-colors overflow-hidden flex items-center justify-center shadow-inner">
+                                    <img 
+                                        src="./avatar.webp" 
+                                        onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 200%27%3E%3Cdefs%3E%3ClinearGradient id=%27sky%27 x1=%270%27 y1=%270%27 x2=%270%27 y2=%271%27%3E%3Cstop offset=%270%25%27 stop-color=%27%2356b4f9%27/%3E%3Cstop offset=%27100%25%27 stop-color=%27%238ed0fc%27/%3E%3C/linearGradient%3E%3ClinearGradient id=%27hat%27 x1=%270%27 y1=%270%27 x2=%271%27 y2=%271%27%3E%3Cstop offset=%270%25%27 stop-color=%27%2327272a%27/%3E%3Cstop offset=%27100%25%27 stop-color=%27%23121215%27/%3E%3C/linearGradient%3E%3C/defs%3E%3C!-- Latar Langit Biru --%3E%3Crect width=%27200%27 height=%27200%27 fill=%27url(%23sky)%27/%3E%3C!-- Badan & Kepala Kucing Putih --%3E%3Cellipse cx=%27100%27 cy=%27155%27 rx=%2756%27 ry=%2732%27 fill=%27%23f4f4f5%27/%3E%3Ccircle cx=%27100%27 cy=%27112%27 r=%2754%27 fill=%27%23ffffff%27/%3E%3C!-- Bayangan Bawah Topi --%3E%3Cpath d=%27M48 96 Q100 84 152 96 L152 108 Q100 94 48 108 Z%27 fill=%27%23d4d4d8%27 opacity=%270.6%27/%3E%3C!-- Kalung Rantai Perak --%3E%3Cpath d=%27M62 146 Q100 162 138 146%27 fill=%27none%27 stroke=%27%2371717a%27 stroke-width=%273.5%27 stroke-dasharray=%273 2%27 stroke-linecap=%27round%27/%3E%3C!-- Hidung Pink & Mulut Kucing --%3E%3Cpath d=%27M93 113 Q100 110 107 113 Q104 120 100 121 Q96 120 93 113 Z%27 fill=%27%23f4a29e%27/%3E%3Cpath d=%27M84 128 Q94 132 100 125 Q106 132 116 128%27 fill=%27none%27 stroke=%27%2371717a%27 stroke-width=%272.2%27 stroke-linecap=%27round%27/%3E%3Cline x1=%27100%27 y1=%27121%27 x2=%27100%27 y2=%27126%27 stroke=%27%2371717a%27 stroke-width=%272%27/%3E%3C!-- Kumis Kucing --%3E%3Cg stroke=%27%23e4e4e7%27 stroke-width=%271.5%27 stroke-linecap=%27round%27%3E%3Cline x1=%2765%27 y1=%27118%27 x2=%2728%27 y2=%27114%27/%3E%3Cline x1=%2764%27 y1=%27124%27 x2=%2724%27 y2=%27128%27/%3E%3Cline x1=%2768%27 y1=%27130%27 x2=%2732%27 y2=%27140%27/%3E%3Cline x1=%27135%27 y1=%27118%27 x2=%27172%27 y2=%27114%27/%3E%3Cline x1=%27136%27 y1=%27124%27 x2=%27176%27 y2=%27128%27/%3E%3Cline x1=%27132%27 y1=%27130%27 x2=%27168%27 y2=%27140%27/%3E%3C/g%3E%3C!-- Bucket Hat Hitam --%3E%3Cpath d=%27M52 72 L60 40 Q100 28 140 40 L148 72 Z%27 fill=%27url(%23hat)%27/%3E%3Cpath d=%27M24 106 Q20 74 52 70 Q100 62 148 70 Q180 74 176 108 Q166 92 148 88 Q100 76 52 88 Q34 92 24 106 Z%27 fill=%27%2318181b%27 stroke=%27%233f3f46%27 stroke-width=%271.2%27/%3E%3C!-- Kacamata Hitam Bulat --%3E%3Ccircle cx=%2776%27 cy=%2798%27 r=%2721%27 fill=%27%2309090b%27 stroke=%27%23d4d4d8%27 stroke-width=%272.5%27/%3E%3Ccircle cx=%27124%27 cy=%2798%27 r=%2721%27 fill=%27%2309090b%27 stroke=%27%23d4d4d8%27 stroke-width=%272.5%27/%3E%3Cpath d=%27M97 96 Q100 92 103 96%27 fill=%27none%27 stroke=%27%23d4d4d8%27 stroke-width=%272.5%27/%3E%3C!-- Pantulan Kaca --%3E%3Cpath d=%27M64 88 Q72 82 82 86%27 fill=%27none%27 stroke=%27%23ffffff%27 stroke-width=%271.5%27 opacity=%270.25%27 stroke-linecap=%27round%27/%3E%3Cpath d=%27M112 88 Q120 82 130 86%27 fill=%27none%27 stroke=%27%23ffffff%27 stroke-width=%271.5%27 opacity=%270.25%27 stroke-linecap=%27round%27/%3E%3C!-- Tembok Putih Bawah --%3E%3Crect x=%270%27 y=%27164%27 width=%27200%27 height=%2726%27 fill=%27%23ffffff%27/%3E%3Crect x=%270%27 y=%27190%27 width=%27200%27 height=%2710%27 fill=%27%2327272a%27/%3E%3C/svg%3E';" 
+                                        alt="Avatar Profil Fahri Faturrahman (FahriLabs)" 
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <span title="Verified Developer Identity" class="absolute bottom-0.5 right-0.5 w-6 h-6 rounded-full bg-[#121215] border border-[#27272a] flex items-center justify-center text-emerald-400">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                            </div>
+
+                            <div>
+                                <h2 class="text-xl font-bold text-zinc-100 tracking-tight">Fahri Faturrahman</h2>
+                                <p class="text-xs sm:text-sm text-zinc-400 font-medium mt-1">
+                                    Independent Web Developer &amp; Creator of <span class="text-zinc-200 font-semibold">FahriLabs</span>
+                                </p>
+                                <p class="font-mono text-[11px] text-zinc-500 mt-1.5">
+                                    https://fahrilabs.is-a.dev
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Ringkasan Cepat & Tautan Sosial Mini -->
+                        <div class="mt-6 pt-5 border-t border-[#27272a] space-y-3">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-zinc-500 font-mono">Architecture</span>
+                                <span class="text-zinc-300 font-mono">100% Client-Side / Zero-Dep</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs gap-2">
+                                <span class="text-zinc-500 font-mono shrink-0">Direct Contact</span>
+                                <a href="mailto:fahri.faturrahman14@gmail.com" class="text-emerald-400 hover:underline font-mono truncate">fahri.faturrahman14@gmail.com</a>
+                            </div>
+                            <div class="pt-2 flex items-center justify-center gap-2">
+                                <a href="https://github.com/fahriftrhmn14" target="_blank" rel="noopener noreferrer" title="GitHub" class="p-2 rounded-lg bg-[#09090b] border border-[#27272a] hover:border-zinc-500 text-zinc-400 hover:text-zinc-100 transition-colors">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                                </a>
+                                <a href="https://dev.to/fahriftrhmn14" target="_blank" rel="noopener noreferrer" title="Dev.to" class="p-2 rounded-lg bg-[#09090b] border border-[#27272a] hover:border-zinc-500 text-zinc-400 hover:text-zinc-100 transition-colors">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.29-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.27.43.29.6.32 2.57.05 2.23-.02 2.73-.47 3.3zm5.09-5.47h-2.47v1.77h1.52v1.28l-.72.04-.75.03v1.77l1.22.03 1.2.04v1.28h-1.6c-1.53 0-1.6-.01-1.87-.3l-.3-.28v-3.16c0-3.02.01-3.18.25-3.48.23-.31.25-.31 1.88-.31h1.64v1.3zm4.68 5.45c-.17.43-.64.79-1 .79-.18 0-.45-.15-.67-.39-.32-.32-.45-.63-.82-2.08l-.9-3.39-.45-1.67h.76c.4 0 .75.02.75.05 0 .06 1.16 4.54 1.26 4.83.04.15.32-.7.73-2.3l.66-2.52.74-.04c.4-.02.73 0 .73.04 0 .14-1.67 6.38-1.8 6.68z"/></svg>
+                                </a>
+                                <a href="https://codepen.io/Fahri-Website/" target="_blank" rel="noopener noreferrer" title="CodePen" class="p-2 rounded-lg bg-[#09090b] border border-[#27272a] hover:border-zinc-500 text-zinc-400 hover:text-zinc-100 transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon><line x1="12" y1="22" x2="12" y2="15.5"></line><polyline points="22 8.5 12 15.5 2 8.5"></polyline><polyline points="2 15.5 12 8.5 22 15.5"></polyline><line x1="12" y1="2" x2="12" y2="8.5"></line></svg>
+                                </a>
+                                <a href="https://whatsapp.com/channel/0029Vb8Ok1AJZg47qmMYhz3f" target="_blank" rel="noopener noreferrer" title="WhatsApp Channel" class="p-2 rounded-lg bg-[#09090b] border border-[#27272a] hover:border-zinc-500 text-zinc-400 hover:text-emerald-400 transition-colors">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.758.458 3.475 1.328 4.988L2 22l5.172-1.356a9.927 9.927 0 004.859 1.266h.004c5.515 0 9.969-4.454 9.969-9.969A9.914 9.914 0 0019.08 4.918 9.912 9.912 0 0012.031 2zm5.82 14.274c-.245.691-1.428 1.322-1.976 1.404-.503.075-1.141.107-1.842-.115-.425-.135-.97-.316-1.668-.618-2.936-1.268-4.853-4.225-5-4.421-.146-.195-1.193-1.588-1.193-3.029 0-1.441.756-2.15 1.024-2.443.268-.293.586-.366.781-.366.195 0 .391.002.561.01.18.009.422-.068.66.503.244.586.83 2.026.903 2.173.073.146.122.317.024.512-.097.196-.146.317-.293.488-.146.171-.308.382-.439.513-.146.146-.299.305-.128.598.171.293.759 1.252 1.63 2.028 1.12.999 2.064 1.309 2.357 1.455.293.146.464.122.635-.073.171-.195.732-.854.928-1.147.195-.293.39-.244.659-.146.268.098 1.708.805 2.001.952.293.146.488.22.561.342.073.122.073.707-.172 1.398z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metrik Arsitektur Ringkas -->
+            <div class="grid grid-cols-3 gap-3 sm:gap-6 mt-12 pt-8 border-t border-[#27272a]/70">
+                <div>
+                    <div class="font-mono text-lg sm:text-xl font-semibold text-zinc-100">100%</div>
+                    <div class="text-xs sm:text-sm text-zinc-500 mt-0.5">Client-Side Execution</div>
+                </div>
+                <div>
+                    <div class="font-mono text-lg sm:text-xl font-semibold text-zinc-100">0 KB</div>
+                    <div class="text-xs sm:text-sm text-zinc-500 mt-0.5">Runtime Bloat / Heavy Frameworks</div>
+                </div>
+                <div>
+                    <div class="font-mono text-lg sm:text-xl font-semibold text-emerald-400">Open Source</div>
+                    <div class="text-xs sm:text-sm text-zinc-500 mt-0.5">MIT &amp; Public Repositories</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS SECTION -->
+        <section id="projects" class="py-16 sm:py-20 border-b border-[#27272a]">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+                <div>
+                    <span class="font-mono text-xs uppercase tracking-wider text-emerald-400 block mb-2">// Selected Engineering Works</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-zinc-100 tracking-tight">Featured Open-Source Projects</h2>
+                </div>
+                <p class="text-sm text-zinc-400 max-w-md">
+                    Aplikasi web interaktif dan alat utilitas developer yang dirancang dengan standar performa peramban native dan tersedia bebas untuk komunitas.
+                </p>
+            </div>
+
+            <!-- Grid Kartu Proyek -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                <!-- Proyek 1: Code Studio -->
+                <article class="group bg-[#121215] border border-[#27272a] hover:border-zinc-600 rounded-xl p-6 flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="flex items-start justify-between gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-[#09090b] border border-[#27272a] flex items-center justify-center text-emerald-400">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
+                            <span class="font-mono text-[11px] px-2.5 py-1 rounded bg-[#09090b] border border-[#27272a] text-zinc-400">
+                                Web IDE / Utility
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-100 group-hover:text-emerald-400 transition-colors mb-2">
+                            Code Studio
+                        </h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed mb-5">
+                            Lingkungan pengembangan web berbasis browser dengan manajemen multi-file, panel splitter responsif, pratinjau langsung (live sandbox preview) secara real-time, serta modul minifier kode HTML/CSS/JS bawaan tanpa server kompilasi.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-[#27272a]">Vanilla JS</span>
+                            <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-[#27272a]">Blob &amp; Iframe API</span>
+                            <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-[#27272a]">AST / Minifier</span>
+                        </div>
+                        <div class="pt-4 border-t border-[#27272a] flex items-center justify-between">
+                            <a href="https://github.com/fahriftrhmn14" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-zinc-300 hover:text-emerald-400 transition-colors">
+                                <span>Source Repository</span>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                            <span class="font-mono text-[11px] text-zinc-500">client-side</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyek 2: FahriLearn Knowledge -->
+                <article class="group bg-[#121215] border border-[#27272a] hover:border-zinc-600 rounded-xl p-6 flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="flex items-start justify-between gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-[#09090b] border border-[#27272a] flex items-center justify-center text-sky-400">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                                </svg>
+                            </div>
+                            <span class="font-mono text-[11px] px-2.5 py-1 rounded bg-[#09090b] border border-[#27272a] text-zinc-400">
+                                Interactive Simulation
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-100 group-hover:text-sky-400 transition-colors mb-2">
+                            FahriLearn Knowledge
+                        </h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed mb-5">
+                            Platform edukasi interaktif dan laboratorium sains virtual berbasis web terbuka. Memanfaatkan komputasi grafis HTML5 Canvas dan SVG dinamis untuk memvisualisasikan konsep algoritma, fisika, dan struktur data secara interaktif.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-[#27272a]">HTML5 Canvas</span>
+                            <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-[#27272a]">Interactive SVG</span>
+                            <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-[#27272a]">Tailwind CSS</span>
+                        </div>
+                        <div class="pt-4 border-t border-[#27272a] flex items-center justify-between">
+                            <a href="https://github.com/fahriftrhmn14" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-zinc-300 hover:text-sky-400 transition-colors">
+                                <span>Source Repository</span>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                            <span class="font-mono text-[11px] text-zinc-500">open-education</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyek 3: Meta Tag Opengraph Studio -->
+                <article class="group bg-[#121215] border border-[#27272a] hover:border-zinc-600 rounded-xl p-6 flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="flex items-start justify-between gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-[#09090b] border border-[#27272a] flex items-center justify-center text-amber-400">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                                </svg>
+                            </div>
+                            <span class="font-mono text-[11px] px-2.5 py-1 rounded bg-[#09090b] border border-[#27272a] text-zinc-400">
+                                SEO &amp; Metadata Tool
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-100 group-hover:text-amber-400 transition-colors mb-2">
+                            Meta Tag Opengraph Studio
+                        </h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed mb-5">
+                            Utilitas pengembang open-source untuk merancang, mengaudit, dan menghasilkan tag meta HTML standar, Open Graph Protocol, serta Twitter Cards dengan simulasi pratinjau kartu sosial secara instan di sisi klien.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-[#27272a]">DOM Parsing</span>
+                            <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-[#27272a]">Open Graph Spec</span>
+                            <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-[#27272a]">Zero-Dependency</span>
+                        </div>
+                        <div class="pt-4 border-t border-[#27272a] flex items-center justify-between">
+                            <a href="https://github.com/fahriftrhmn14" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-zinc-300 hover:text-amber-400 transition-colors">
+                                <span>Source Repository</span>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                            <span class="font-mono text-[11px] text-zinc-500">dev-tool</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyek 4: Local SQL Studio -->
+                <article class="group bg-[#121215] border border-[#27272a] hover:border-zinc-600 rounded-xl p-6 flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="flex items-start justify-between gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-[#09090b] border border-[#27272a] flex items-center justify-center text-purple-400">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                                </svg>
+                            </div>
+                            <span class="font-mono text-[11px] px-2.5 py-1 rounded bg-[#09090b] border border-[#27272a] text-zinc-400">
+                                Browser Database
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-100 group-hover:text-purple-400 transition-colors mb-2">
+                            Local SQL Studio
+                        </h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed mb-5">
+                            Klien basis data relasional ringan berbasis browser untuk mengeksekusi kueri SQL, inspeksi skema tabel, dan ekspor-impor dataset (CSV/JSON) secara lokal di memori peramban tanpa memerlukan koneksi database server.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-[#27272a]">SQL Engine</span>
+                            <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-[#27272a]">IndexedDB / Storage</span>
+                            <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-[#27272a]">CSV/JSON Parser</span>
+                        </div>
+                        <div class="pt-4 border-t border-[#27272a] flex items-center justify-between">
+                            <a href="https://github.com/fahriftrhmn14" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-zinc-300 hover:text-purple-400 transition-colors">
+                                <span>Source Repository</span>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                            <span class="font-mono text-[11px] text-zinc-500">local-first</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- TECH STACK SECTION -->
+        <section id="skills" class="py-16 sm:py-20 border-b border-[#27272a]">
+            <div class="mb-10">
+                <span class="font-mono text-xs uppercase tracking-wider text-emerald-400 block mb-2">// Core Technical Capabilities</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-zinc-100 tracking-tight">Tech Stack &amp; Arsitektur</h2>
+                <p class="text-sm text-zinc-400 mt-2 max-w-2xl">
+                    Fokus pada penguasaan fondasi standar web terbuka (Open Web Standards) untuk menciptakan perangkat lunak yang ringan, aman, dan berkelanjutan tanpa ketergantungan rantai pasok library pihak ketiga yang rapuh.
+                </p>
+            </div>
+
+            <!-- Grid Keahlian Terstruktur -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                
+                <!-- Skill 1: HTML5 -->
+                <div class="bg-[#121215] border border-[#27272a] rounded-xl p-5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-mono text-sm font-semibold text-zinc-100">HTML5</span>
+                        <span class="font-mono text-[11px] text-zinc-500">Semantic &amp; A11y</span>
+                    </div>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Struktur dokumen semantik modern, aksesibilitas ARIA, integrasi Canvas 2D, SVG vektor inline, dan optimasi SEO teknis.
+                    </p>
+                </div>
+
+                <!-- Skill 2: Vanilla JavaScript -->
+                <div class="bg-[#121215] border border-[#27272a] rounded-xl p-5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-mono text-sm font-semibold text-zinc-100">Vanilla JavaScript (ES6+)</span>
+                        <span class="font-mono text-[11px] text-emerald-400">Core Engine</span>
+                    </div>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Manipulasi DOM berperforma tinggi, pemrograman asinkron, manajemen state deterministik, dan modularitas tanpa framework berat.
+                    </p>
+                </div>
+
+                <!-- Skill 3: CSS3 -->
+                <div class="bg-[#121215] border border-[#27272a] rounded-xl p-5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-mono text-sm font-semibold text-zinc-100">CSS3</span>
+                        <span class="font-mono text-[11px] text-zinc-500">Layout &amp; Motion</span>
+                    </div>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Arsitektur tata letak CSS Grid &amp; Flexbox kompleks, Custom Properties (CSS Variables), dan transisi antarmuka akselerasi GPU.
+                    </p>
+                </div>
+
+                <!-- Skill 4: Tailwind CSS -->
+                <div class="bg-[#121215] border border-[#27272a] rounded-xl p-5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-mono text-sm font-semibold text-zinc-100">Tailwind CSS</span>
+                        <span class="font-mono text-[11px] text-zinc-500">Design System</span>
+                    </div>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Penerapan sistem desain berbasis utilitas yang konsisten, skala tipografi presisi, serta adaptasi responsif lintas perangkat.
+                    </p>
+                </div>
+
+                <!-- Skill 5: Web APIs -->
+                <div class="bg-[#121215] border border-[#27272a] rounded-xl p-5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-mono text-sm font-semibold text-zinc-100">Browser Web APIs</span>
+                        <span class="font-mono text-[11px] text-zinc-500">Native Capabilities</span>
+                    </div>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Pemanfaatan LocalStorage, IndexedDB, File/Blob API, Web Workers, Clipboard API, dan ResizeObserver untuk kapabilitas aplikasi native.
+                    </p>
+                </div>
+
+                <!-- Skill 6: Client-side Architecture & Git -->
+                <div class="bg-[#121215] border border-[#27272a] rounded-xl p-5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-mono text-sm font-semibold text-zinc-100">Client-Side Arch &amp; Git</span>
+                        <span class="font-mono text-[11px] text-zinc-500">Workflow</span>
+                    </div>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Perancangan aplikasi single-file portabel, arsitektur local-first berprivasi tinggi, serta kontrol versi terstruktur dengan Git &amp; GitHub.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ABOUT / ENGINEERING PHILOSOPHY SECTION -->
+        <section id="about" class="py-16 sm:py-20 border-b border-[#27272a]">
+            <div class="bg-[#121215] border border-[#27272a] rounded-2xl p-6 sm:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <div class="lg:col-span-7">
+                        <span class="font-mono text-xs uppercase tracking-wider text-emerald-400 block mb-2">// Developer Profile</span>
+                        <h2 class="text-2xl font-bold text-zinc-100 tracking-tight mb-4">Tentang FahriLabs</h2>
+                        <div class="space-y-4 text-sm sm:text-base text-zinc-400 leading-relaxed">
+                            <p>
+                                Saya <strong class="text-zinc-200 font-medium">Fahri Faturrahman</strong>, seorang pengembang web mandiri (independent web developer) yang mendedikasikan <strong class="text-zinc-200 font-medium">FahriLabs</strong> sebagai ruang laboratorium perangkat lunak open-source untuk mengeksplorasi batas kemampuan peramban modern.
+                            </p>
+                            <p>
+                                Prinsip utama saya dalam rekayasa perangkat lunak adalah <span class="text-zinc-200 font-mono text-xs bg-[#09090b] px-1.5 py-0.5 rounded border border-[#27272a]">zero-dependency</span> dan <span class="text-zinc-200 font-mono text-xs bg-[#09090b] px-1.5 py-0.5 rounded border border-[#27272a]">100% client-side</span>: perangkat lunak harus merespons secara instan, menjaga privasi data pengguna tetap di perangkat lokal, serta terbuka untuk dipelajari oleh sesama pengembang tanpa hambatan infrastruktur server.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Spesifikasi Lingkungan & Tautan -->
+                    <div class="lg:col-span-5 bg-[#09090b] border border-[#27272a] rounded-xl p-5 font-mono text-xs">
+                        <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#27272a]">
+                            <span class="text-zinc-400">developer.json</span>
+                            <span class="text-emerald-400">open-source</span>
+                        </div>
+                        <dl class="space-y-2.5 text-zinc-300">
+                            <div class="flex justify-between gap-2">
+                                <dt class="text-zinc-500">"name":</dt>
+                                <dd class="text-right">"Fahri Faturrahman"</dd>
+                            </div>
+                            <div class="flex justify-between gap-2">
+                                <dt class="text-zinc-500">"alias":</dt>
+                                <dd class="text-right">"FahriLabs"</dd>
+                            </div>
+                            <div class="flex justify-between gap-2">
+                                <dt class="text-zinc-500">"domain":</dt>
+                                <dd class="text-right text-emerald-400">"fahrilabs.is-a.dev"</dd>
+                            </div>
+                            <div class="flex justify-between gap-2">
+                                <dt class="text-zinc-500">"license":</dt>
+                                <dd class="text-right">"MIT / Open-Source"</dd>
+                            </div>
+                            <div class="flex justify-between gap-2">
+                                <dt class="text-zinc-500">"github":</dt>
+                                <dd class="text-right">
+                                    <a href="https://github.com/fahriftrhmn14" target="_blank" rel="noopener noreferrer" class="underline decoration-zinc-600 hover:text-emerald-400 transition-colors">
+                                        @fahriftrhmn14
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="flex justify-between gap-2">
+                                <dt class="text-zinc-500">"email":</dt>
+                                <dd class="text-right truncate">
+                                    <a href="mailto:fahri.faturrahman14@gmail.com" class="underline decoration-zinc-600 hover:text-emerald-400 transition-colors">
+                                        fahri.faturrahman14@gmail.com
+                                    </a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOCIAL & DEVELOPER CHANNELS SECTION -->
+        <section id="connect" class="py-16 sm:py-20">
+            <div class="mb-10">
+                <span class="font-mono text-xs uppercase tracking-wider text-emerald-400 block mb-2">// Official Channels &amp; Identity</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-zinc-100 tracking-tight">Tautan Pengembang &amp; Komunitas</h2>
+                <p class="text-sm text-zinc-400 mt-2 max-w-2xl">
+                    Saluran resmi repositori kode sumber, publikasi teknis, prototipe UI, dan diskusi pengembangan terbuka milik Fahri Faturrahman (FahriLabs).
+                </p>
+            </div>
+
+            <!-- Grid Kartu Tautan Sosial Media & Profesional -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                <!-- 1. GitHub -->
+                <a href="https://github.com/fahriftrhmn14" target="_blank" rel="noopener noreferrer" class="group bg-[#121215] border border-[#27272a] hover:border-zinc-500 rounded-xl p-5 flex items-center justify-between transition-all">
+                    <div class="flex items-center gap-3.5 min-w-0">
+                        <div class="w-10 h-10 rounded-lg bg-[#09090b] border border-[#27272a] flex items-center justify-center text-zinc-200 group-hover:text-white shrink-0">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="truncate">
+                            <div class="text-sm font-bold text-zinc-100 group-hover:text-emerald-400 transition-colors">GitHub</div>
+                            <div class="font-mono text-xs text-zinc-400 truncate">@fahriftrhmn14</div>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-zinc-500 group-hover:text-zinc-200 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"></path>
+                    </svg>
+                </a>
+
+                <!-- 2. Dev.to -->
+                <a href="https://dev.to/fahriftrhmn14" target="_blank" rel="noopener noreferrer" class="group bg-[#121215] border border-[#27272a] hover:border-zinc-500 rounded-xl p-5 flex items-center justify-between transition-all">
+                    <div class="flex items-center gap-3.5 min-w-0">
+                        <div class="w-10 h-10 rounded-lg bg-[#09090b] border border-[#27272a] flex items-center justify-center text-zinc-200 group-hover:text-white shrink-0">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.29-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.27.43.29.6.32 2.57.05 2.23-.02 2.73-.47 3.3zm5.09-5.47h-2.47v1.77h1.52v1.28l-.72.04-.75.03v1.77l1.22.03 1.2.04v1.28h-1.6c-1.53 0-1.6-.01-1.87-.3l-.3-.28v-3.16c0-3.02.01-3.18.25-3.48.23-.31.25-.31 1.88-.31h1.64v1.3zm4.68 5.45c-.17.43-.64.79-1 .79-.18 0-.45-.15-.67-.39-.32-.32-.45-.63-.82-2.08l-.9-3.39-.45-1.67h.76c.4 0 .75.02.75.05 0 .06 1.16 4.54 1.26 4.83.04.15.32-.7.73-2.3l.66-2.52.74-.04c.4-.02.73 0 .73.04 0 .14-1.67 6.38-1.8 6.68z"/>
+                            </svg>
+                        </div>
+                        <div class="truncate">
+                            <div class="text-sm font-bold text-zinc-100 group-hover:text-sky-400 transition-colors">DEV Community</div>
+                            <div class="font-mono text-xs text-zinc-400 truncate">dev.to/fahriftrhmn14</div>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-zinc-500 group-hover:text-zinc-200 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"></path>
+                    </svg>
+                </a>
+
+                <!-- 3. CodePen -->
+                <a href="https://codepen.io/Fahri-Website/" target="_blank" rel="noopener noreferrer" class="group bg-[#121215] border border-[#27272a] hover:border-zinc-500 rounded-xl p-5 flex items-center justify-between transition-all">
+                    <div class="flex items-center gap-3.5 min-w-0">
+                        <div class="w-10 h-10 rounded-lg bg-[#09090b] border border-[#27272a] flex items-center justify-center text-zinc-200 group-hover:text-white shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+                                <line x1="12" y1="22" x2="12" y2="15.5"></line>
+                                <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+                                <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+                                <line x1="12" y1="2" x2="12" y2="8.5"></line>
+                            </svg>
+                        </div>
+                        <div class="truncate">
+                            <div class="text-sm font-bold text-zinc-100 group-hover:text-amber-400 transition-colors">CodePen</div>
+                            <div class="font-mono text-xs text-zinc-400 truncate">@Fahri-Website</div>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-zinc-500 group-hover:text-zinc-200 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"></path>
+                    </svg>
+                </a>
+
+                <!-- 4. WhatsApp Channel -->
+                <a href="https://whatsapp.com/channel/0029Vb8Ok1AJZg47qmMYhz3f" target="_blank" rel="noopener noreferrer" class="group bg-[#121215] border border-[#27272a] hover:border-zinc-500 rounded-xl p-5 flex items-center justify-between transition-all">
+                    <div class="flex items-center gap-3.5 min-w-0">
+                        <div class="w-10 h-10 rounded-lg bg-[#09090b] border border-[#27272a] flex items-center justify-center text-emerald-400 shrink-0">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.758.458 3.475 1.328 4.988L2 22l5.172-1.356a9.927 9.927 0 004.859 1.266h.004c5.515 0 9.969-4.454 9.969-9.969A9.914 9.914 0 0019.08 4.918 9.912 9.912 0 0012.031 2zm5.82 14.274c-.245.691-1.428 1.322-1.976 1.404-.503.075-1.141.107-1.842-.115-.425-.135-.97-.316-1.668-.618-2.936-1.268-4.853-4.225-5-4.421-.146-.195-1.193-1.588-1.193-3.029 0-1.441.756-2.15 1.024-2.443.268-.293.586-.366.781-.366.195 0 .391.002.561.01.18.009.422-.068.66.503.244.586.83 2.026.903 2.173.073.146.122.317.024.512-.097.196-.146.317-.293.488-.146.171-.308.382-.439.513-.146.146-.299.305-.128.598.171.293.759 1.252 1.63 2.028 1.12.999 2.064 1.309 2.357 1.455.293.146.464.122.635-.073.171-.195.732-.854.928-1.147.195-.293.39-.244.659-.146.268.098 1.708.805 2.001.952.293.146.488.22.561.342.073.122.073.707-.172 1.398z"/>
+                            </svg>
+                        </div>
+                        <div class="truncate">
+                            <div class="text-sm font-bold text-zinc-100 group-hover:text-emerald-400 transition-colors">WhatsApp Channel</div>
+                            <div class="font-mono text-xs text-zinc-400 truncate">FahriLabs Dev Updates</div>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-zinc-500 group-hover:text-zinc-200 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"></path>
+                    </svg>
+                </a>
+
+                <!-- 5. Pinterest -->
+                <a href="https://id.pinterest.com/fahrifaturrahman14/" target="_blank" rel="noopener noreferrer" class="group bg-[#121215] border border-[#27272a] hover:border-zinc-500 rounded-xl p-5 flex items-center justify-between transition-all">
+                    <div class="flex items-center gap-3.5 min-w-0">
+                        <div class="w-10 h-10 rounded-lg bg-[#09090b] border border-[#27272a] flex items-center justify-center text-rose-400 shrink-0">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 2C6.486 2 2 6.486 2 12.017c0 4.242 2.636 7.868 6.357 9.328-.088-.792-.167-2.008.035-2.874.182-.782 1.176-4.985 1.176-4.985s-.3-.6-.3-1.488c0-1.394.808-2.435 1.814-2.435.855 0 1.268.642 1.268 1.412 0 .86-.548 2.146-.831 3.338-.236.998.5 1.812 1.485 1.812 1.783 0 3.153-1.88 3.153-4.593 0-2.401-1.725-4.08-4.189-4.08-2.853 0-4.528 2.14-4.528 4.352 0 .862.332 1.786.746 2.288.082.099.094.186.069.288-.076.316-.245.998-.278 1.137-.044.183-.145.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.525-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.531 0 10.017-4.486 10.017-10.017C22.034 6.486 17.548 2 12.017 2z"/>
+                            </svg>
+                        </div>
+                        <div class="truncate">
+                            <div class="text-sm font-bold text-zinc-100 group-hover:text-rose-400 transition-colors">Pinterest</div>
+                            <div class="font-mono text-xs text-zinc-400 truncate">@fahrifaturrahman14</div>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-zinc-500 group-hover:text-zinc-200 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"></path>
+                    </svg>
+                </a>
+
+                <!-- 6. Email Kontak -->
+                <a href="mailto:fahri.faturrahman14@gmail.com" class="group bg-[#121215] border border-[#27272a] hover:border-zinc-500 rounded-xl p-5 flex items-center justify-between transition-all">
+                    <div class="flex items-center gap-3.5 min-w-0">
+                        <div class="w-10 h-10 rounded-lg bg-[#09090b] border border-[#27272a] flex items-center justify-center text-purple-400 shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="truncate">
+                            <div class="text-sm font-bold text-zinc-100 group-hover:text-purple-400 transition-colors">Direct Email</div>
+                            <div class="font-mono text-xs text-zinc-400 truncate">fahri.faturrahman14@gmail.com</div>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-zinc-500 group-hover:text-zinc-200 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"></path>
+                    </svg>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative z-10 border-t border-[#27272a] bg-[#09090b]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
+                <span class="font-mono text-zinc-300 font-medium">&copy; <span id="current-year">2026</span> Fahri Faturrahman (FahriLabs).</span>
+                <span class="hidden sm:inline text-zinc-700">&bull;</span>
+                <span>Non-commercial open-source developer portfolio (<span class="font-mono text-zinc-400">fahrilabs.is-a.dev</span>).</span>
+            </div>
+            <div class="flex items-center gap-4 font-mono">
+                <a href="https://github.com/fahriftrhmn14" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-zinc-200 transition-colors">
+                    GitHub
+                </a>
+                <span class="text-zinc-700">/</span>
+                <a href="https://dev.to/fahriftrhmn14" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-zinc-200 transition-colors">
+                    Dev.to
+                </a>
+                <span class="text-zinc-700">/</span>
+                <a href="mailto:fahri.faturrahman14@gmail.com" class="text-zinc-400 hover:text-zinc-200 transition-colors">
+                    Email
+                </a>
+                <span class="text-zinc-700">/</span>
+                <a href="#" class="text-zinc-400 hover:text-zinc-200 transition-colors">
+                    Top &uarr;
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Ringan untuk Tahun Dinamis (Zero-Dependency) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearEl = document.getElementById('current-year');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>
